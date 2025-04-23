@@ -1,0 +1,23 @@
+# R history files
+.Rhistory
+.Rapp.history
+
+# R workspace files
+.RData
+
+# RStudio files
+.Rproj.user/
+*.Rproj
+
+# Temporary files
+*.log
+*.out
+*.aux
+
+# Quarto/R Markdown render artifacts (optional)
+_cache/
+*.knit.md
+
+# OS-specific
+.DS_Store
+Thumbs.db
