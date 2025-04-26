@@ -298,7 +298,7 @@ data_table <- data %>%
     #`Sequence Number` = `Sequence number`,
     `Sex` = `Sex`,
     `Summary Stage (2004+)` = `Combined Summary Stage (2004+)`,
-    `Rural-Urban Classification(Metro/Non_Metro)` = `Rural-Urban Continuum Code`,
+    `Rural-Urban Classification (Metro/Non_Metro)` = `Rural-Urban Continuum Code`,
     `Median Household Income (2022 Adjusted in $)` = `Median household income inflation adj to 2022`,
     #`Marital Status at Diagnosis` = `Marital status at diagnosis`,
     `SEER Registry (CA & GA as Whole States)` = `SEER registry (with CA and GA as whole states)`,
@@ -336,7 +336,7 @@ Column {data-width=10%}
 
 ### Key takeaways description
 
-Key takeaways from filterable data table: Approximately 47% of all colorectal cancer cases were from females and 53% were from males. 126,003 cases were LOCRC, while about 18,785 cases were EOCRC. 2020 had the lowest number of CRC cases with 33,582 cases.
+**Key takeaways from filterable data table: Approximately 47% of all colorectal cancer cases were from females and 53% were from males. 126,003 cases were LOCRC, while 18,785 cases were EOCRC. 2020 had the lowest number of CRC cases with 33,582 cases.**
 
 
 Real world Impact
@@ -352,7 +352,7 @@ Link to GitHub Repository
 Row
 -----------------------------------------------------------------------
 
-🔗 Access the full GitHub repository here, which includes the project’s source code, README.md, rendered HTML dashboard, and all associated R Markdown (.Rmd) files:
+🔗 **Access the full GitHub repository here, which includes the project’s source code, README.md, rendered HTML dashboard, and all associated R Markdown (.Rmd) files:**
 
 👉 https://github.com/ramya-rajendran-at-emory-edu/eocrc_and_locrc_dashboard/
 
