@@ -24,17 +24,13 @@ library(readr)
 Introduction
 =======================================================================
 
-Row {.tabset .tabset-fade}
------------------------------------------------------------------------
-
-
 ### 1. Research Questions & Motivation
 
 **Project Overview**
 
 This interactive dashboard provides a comprehensive **exploratory analysis** of **Early-Onset Colorectal Cancer (EOCRC)** using data from the **Surveillance, Epidemiology, and End Results (SEER) program**. The dataset includes **demographic, clinical, and socioeconomic variables** linked to colorectal cancer diagnoses between **2018 and 2021**. The goal is to enable data-driven decision-making for researchers and policymakers.
 
-This study investigates disparities in **early-onset colorectal cancer (EOCRC)** and **late-onset colorectal cancer (LOCRC)**, focusing on demographic, socioeconomic, and geographic factors.
+This study investigates disparities in **Early-Onset Colorectal Cancer (EOCRC)** and **Late-Onset Colorectal Cancer (LOCRC)**, focusing on demographic, socioeconomic, and geographic factors.
 
 **Key questions:**
 
@@ -50,78 +46,76 @@ This study investigates disparities in **early-onset colorectal cancer (EOCRC)**
 - **Investigate urban vs. rural classification** and its impact on cancer diagnosis.
 - **Enable interactive data filtering** to facilitate real-time analysis and insights.
 
-
-### 3. Data Source
-
-- The data source is the SEER Program (https://seer.cancer.gov/), a trusted U.S. cancer surveillance system that requires an account to access the data. There were 144,788 cases (EOCRC: ages 18-49, LOCRC: ages 50+). The data were collected using hospital-based cancer registries, pathology reports, and medical records. The study population consisted of diverse EOCRC and LOCRC patients across multiple geographic regions in the U.S. The time period of the data was 2018-2021, capturing recent trends in cancer disparities.
-
-
-Key Variables for Analysis
+Data Source
 =======================================================================
 
-Row {.tabset .tabset-fade}
------------------------------------------------------------------------
+### Data Source
 
-### 1. Demographics
-
-- **Age Groups:** **18-49** (EOCRC), **50+** (LOCRC)
-
-- **Sex:** Male, Female
-
-- **Race/Ethnicity:** 
-  - Non-Hispanic White
-  - Non-Hispanic Black
-  - Hispanic
-  - Non-Hispanic Asian/Pacific Islander
-  - Non-Hispanic American Indian/Alaska Native
-
-### 2. Cancer Details
-- **Tumor Site:** Location in the colon
-- **Histology:** Type of cancer cells
-- **Tumor Behavior:** Benign, in situ, malignant
-- **Stage at Diagnosis:** Localized, regional, distant
-
-### 3. Socioeconomic Factors
-- **Household Income:** Inflation-adjusted to **2022** (categorized)
-- **Rural vs. Urban:** Metropolitan or nonmetropolitan areas
-
-### 4. Diagnosis & Clinical Data
-- **Year of Diagnosis:** **2018-2021**
-- **Diagnostic Method:** Histology, cytology, imaging, clinical
-- **Reporting Source:** Hospital, private lab, physician’s office
-
-### 5. Genetic & Tumor Markers
-- **KRAS Mutation:** Present or absent
-- **Tumor Grade:** Low, intermediate, or high
+- The data source is the SEER Program (https://seer.cancer.gov/), a trusted U.S. cancer surveillance system that requires an account to access the data. There were 144,788 cases (Early-Onset Colorectal Cancer (EOCRC) ages 18-49, Late-Onset Colorectal Cancer (LOCRC): ages 50+). The data were collected using hospital-based cancer registries, pathology reports, and medical records. The study population consisted of diverse EOCRC and LOCRC patients across multiple geographic regions in the U.S. The time period of the data was 2018-2021, capturing recent trends in cancer disparities.
 
 
-Planned Interactive HTML Widgets
+Project Description
 =======================================================================
 
-Row {.tabset .tabset-fade}
------------------------------------------------------------------------
+### **EOCRC Visualization Bar Chart Description**
 
-### 1. Interactive Bar Chart (Plotly - EOCRC Cases by Race/Ethnicity)
+1. Demographics
+    - **Age Groups:** **18-49** Early-Onset Colorectal Cancer (EOCRC), **50+** Late-Onset Colorectal Cancer (LOCRC)
+    - **Sex:** Male, Female
+    - **Race/Ethnicity:** 
+      - Non-Hispanic White
+      - Non-Hispanic Black
+      - Hispanic
+      - Non-Hispanic Asian/Pacific Islander
+      - Non-Hispanic American Indian/Alaska Native
 
-**Description:**
+2. Cancer Details
+    - **Histology:** Type of cancer cells
+    - **Stage at Diagnosis:** Localized, regional, distant    
 
-- **X-Axis:** Race/Ethnicity categories
+3. Socioeconomic Factors
+    - **Household Income:** Inflation-adjusted to **2022** (categorized)
+    - **Rural vs. Urban:** Metropolitan or nonmetropolitan areas    
 
-- **Y-Axis:** Number of EOCRC/LOCRC cases
+4. Diagnosis & Clinical Data
+    - **Year of Diagnosis:** **2018-2021**
+	- **SEER Registry:** SEER registry (with CA and GA as whole states)
+	
+5. Interactive Bar Chart (Plotly - EOCRC Cases by Race/Ethnicity)
+    - **X-Axis:** Race/Ethnicity categories
+    - **Y-Axis:** Number of Early-Onset Colorectal Cancer (EOCRC)/Late-Onset Colorectal Cancer (LOCRC) cases
+    - **Format:** Stacked bar chart
 
-- **Format:** Stacked bar chart
+6. Interactive Features
+    - **Hover Tooltips:** Displays exact case counts for each racial/ethnic group.
+    - **Legend Toggle:** Allows users to filter selected racial/ethnic groups.
+    - **Zooming & Panning:** Enables in-depth analysis of disparities.
 
-### 2. Interactive Features
+7. Purpose
+    - Identify racial and ethnic disparities in colorectal cancer incidence.
+    - Analyze potential risk factors for different populations.
+    - Assess **healthcare access inequalities** affecting early detection.
+ 
+### **Filterable Data Table (DT) with Description**
 
-- **Hover Tooltips:** Displays exact case counts for each racial/ethnic group.
-- **Legend Toggle:** Allows users to filter selected racial/ethnic groups.
-- **Zooming & Panning:** Enables in-depth analysis of disparities.
+1. Filterable Data Table (DT) – DescriptionPatient Demographics & Clinical Characteristics
+  **searchable & sortable** table for patient demographics and clinical data.
 
-### 3. Purpose
+    - **X-Axis:** Race/Ethnicity categories
+    - **Y-Axis:** Number of Early-Onset Colorectal Cancer (EOCRC)/Late-Onset Colorectal Cancer (LOCRC) cases
+    - **Format:** Stacked bar chart
 
-- Identify racial and ethnic disparities in colorectal cancer incidence.
-- Analyze potential risk factors for different populations.
-- Assess **healthcare access inequalities** affecting early detection.
+2. Interactive Features
+    - **Dropdown Filters:** 
+      Age, sex, race/ethnicity, tumor stage, income level, SEER Registry, Rural-Urban Classification (Metro/Non-Metro, Early-Onset Cancer (18-49) (Yes/No), Combined Summary Stage (2004+)    
+    - **Search Functionality:** Quick lookup of patient records.
+    - **Sortable Columns:** Diagnose trends over time.
+    - **Pagination & Adjustable Display:** Customizable data views.
+    
+3. Purpose
+    - Compare **EOCRC vs. LOCRC** patient characteristics.
+    - Identify patterns in cancer progression.
+    - Support **research & policy interventions** for cancer prevention.
 
 
 EOCRC Visualization Bar Chart
@@ -133,7 +127,7 @@ Row
 Column {data-width=90% data-height=4000}
 -----------------------------------------------------------------------
 
-### Interactive Bar Chart (Plotly - EOCRC Cases by Race/Ethnicity)
+### Interactive Bar Chart (Plotly - Early-Onset Colorectal Cancer (EOCRC) Cases by Race/Ethnicity)
 
 ```{r load_data_bar}
 # Load and preprocess dataset:
@@ -144,9 +138,8 @@ Column {data-width=90% data-height=4000}
 
 # Read dataset with explicit column types to prevent automatic conversions
 
-#data <- read_csv("550_thesis_dataset_number_format.csv", col_types = cols(.default = "c"), n_max = 1000)
-data <- read_csv("550_thesis_dataset_number_format.csv",
-                 col_types = cols(.default = "c"))
+#data <- read_csv("550_thesis_dataset_number_format.csv", col_types = cols(.default = "c"), n_max = 10)
+data <- read_csv("550_thesis_dataset_number_format.csv", col_types = cols(.default = "c"))
 
 # Convert categorical variables to factors for proper filtering and analysis
 data$race_ethnicity <- factor(
@@ -196,7 +189,7 @@ plotly_bar <- plot_ly(
   x = ~ race_ethnicity,
   # X-axis represents racial/ethnic groups
   y = ~ total_cases,
-  # Y-axis represents the count of EOCRC cases
+  # Y-axis represents the count of Early-Onset Colorectal Cancer (EOCRC) cases
   color = ~ factor(early_onset_yes_or_no, labels = c("50+", "18-49")),
   # Color coding for age groups
   colors = color_palette,
@@ -204,7 +197,7 @@ plotly_bar <- plot_ly(
   marker = list(line = list(width = 1.5))
 ) %>%
   layout(
-    title = list(text = "EOCRC Cases by Race/Ethnicity and Age Group", y = 0.95),
+    title = list(text = "Early-Onset Colorectal Cancer (EOCRC) Cases by Race/Ethnicity and Age Group", y = 0.95),
     xaxis = list(title = "Race/Ethnicity"),
     yaxis = list(title = "Number of Cases", tickformat = "d"),
     margin = list(t = 80),
@@ -222,34 +215,7 @@ Column {data-width=10%}
 
 ### Key takeaways description
 
-Key takeaways for bar graph: The majority of colorectal cancer cases occurred in people aged 50+. Non-Hispanic Whites made up more than 50% of all CRC cases, while Non-Hispanic American Indians/Alaska Natives made up less than 1%  of all CRC cases.
-
-Data Table (DT) Description
-=======================================================================
-
-Row {.tabset .tabset-fade}
------------------------------------------------------------------------
-
-### 1. Filterable Data Table (DT) – DescriptionPatient Demographics & Clinical Characteristics
-
-**Description:**
-
-**searchable & sortable** table for patient demographics and clinical data.
-
-- **X-Axis:** Race/Ethnicity categories
-- **Y-Axis:** Number of EOCRC/LOCRC cases
-- **Format:** Stacked bar chart
-
-### 2. Interactive Features
-- **Dropdown Filters:** Age, sex, race/ethnicity, tumor stage, income level.
-- **Search Functionality:** Quick lookup of patient records.
-- **Sortable Columns:** Diagnose trends over time.
-- **Pagination & Adjustable Display:** Customizable data views.
-
-### 3. Purpose
-- Compare **EOCRC vs. LOCRC** patient characteristics.
-- Identify patterns in cancer progression.
-- Support **research & policy interventions** for cancer prevention.
+**Key takeaways for bar graph: The majority of colorectal cancer cases occurred in people aged 50+. Non-Hispanic Whites made up more than 50% of all CRC cases, while Non-Hispanic American Indians/Alaska Natives made up less than 1%  of all Colorectal Cancer (CRC) cases.**
 
 
 Filterable Data Table (DT)
@@ -277,8 +243,7 @@ Column {data-width=90% data-height=4000}
 
 
 #data <- read_csv("550_thesis_dataset_full_format.csv", col_types = cols(.default = "c"), n_max=1000)
-data <- read_csv("550_thesis_dataset_full_format.csv",
-                 col_types = cols(.default = "c"))
+data <- read_csv("550_thesis_dataset_full_format.csv", col_types = cols(.default = "c"))
 
 # Convert necessary columns to correct data types for better filtering and visualization
 data <- data %>%
@@ -333,12 +298,12 @@ data_table <- data %>%
     #`Sequence Number` = `Sequence number`,
     `Sex` = `Sex`,
     `Summary Stage (2004+)` = `Combined Summary Stage (2004+)`,
-    `Rural-Urban Classification` = `Rural-Urban Continuum Code`,
+    `Rural-Urban Classification(Metro/Non_Metro)` = `Rural-Urban Continuum Code`,
     `Median Household Income (2022 Adjusted in $)` = `Median household income inflation adj to 2022`,
     #`Marital Status at Diagnosis` = `Marital status at diagnosis`,
     `SEER Registry (CA & GA as Whole States)` = `SEER registry (with CA and GA as whole states)`,
-    `Age at Diagnosis` = `Age recode with single ages and 90+`,
-    `Year of Diagnosis` = `Year of diagnosis`,
+    `Age at Diagnosis (18+)` = `Age recode with single ages and 90+`,
+    `Year of Diagnosis 2018-21` = `Year of diagnosis`,
     `Race & Ethnicity` = `Race and origin recode (NHW, NHB, NHAIAN, NHAPI, Hispanic)`,
     # `KRAS Mutation (2018+)` = `KRAS (2018+)`,
     # `Diagnostic Confirmation` = `Diagnostic Confirmation`,
@@ -374,29 +339,12 @@ Column {data-width=10%}
 Key takeaways from filterable data table: Approximately 47% of all colorectal cancer cases were from females and 53% were from males. 126,003 cases were LOCRC, while about 18,785 cases were EOCRC. 2020 had the lowest number of CRC cases with 33,582 cases.
 
 
-
-
-Summary
+Real world Impact
 =======================================================================
 
-Row {.tabset .tabset-fade}
------------------------------------------------------------------------
+- **This dashboard highlights the impact of socioeconomic status, demographic factors, and geographic location on disparities in colorectal cancer outcomes, with a focus on early detection and diagnosis.**
 
-### 1. Conclusion
-
-This dashboard facilitates **interactive exploration** of **Early-Onset Colorectal Cancer (EOCRC)**, providing:
-
-- **Dynamic filtering** of key clinical and demographic data.
-- **Visualization of disparities** in cancer incidence.
-- **Insights for researchers & policymakers** in understanding EOCRC trends.
-
-### 2. Future Enhancements
-- **Integration of machine learning models** for predictive analysis.
-- **Geo-spatial mapping** to explore regional cancer disparities.
-- **Advanced statistical modeling** to analyze survival trends.
-
-This tool serves as a foundation for further **data-driven public health research** and **clinical interventions**
-
+- **It provides data-driven insights to inform public health interventions and policy initiatives aimed at reducing disparities, promoting early screening, and improving population health outcomes.**
 
 Link to GitHub Repository
 =======================================================================
